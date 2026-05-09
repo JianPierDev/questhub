@@ -4,7 +4,7 @@ import { Link } from "react-router";
 
 export function Header() {
   return (
-    <header className="bg-[#141922] py-4">
+    <header className="bg-[#141922] py-4 sticky top-0 z-50">
       <div className="w-[90%] max-w-7xl mx-auto text-white">
         <div className="grid grid-cols-2 gap-6 md:grid-cols-[1fr_3fr_1fr]">
           <div className="flex items-center gap-2">

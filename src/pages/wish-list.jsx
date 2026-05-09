@@ -1,5 +1,5 @@
-import { Heart, Mail, Globe, Gamepad2, Star, Trophy } from "lucide-react";
 import { Header } from "../common/header/header";
+import { Heart, Mail, Globe, Gamepad2, Star, Trophy } from "lucide-react";
 
 export function WishListPage() {
   const wishlist = [

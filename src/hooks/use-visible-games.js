@@ -1,4 +1,4 @@
-import { useWindowWidth } from "./use-window-with";
+import { useWindowWidth } from "./use-window-width";
 
 export function useVisibleGames(games) {
   const width = useWindowWidth();

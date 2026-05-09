@@ -1,8 +1,11 @@
+import { Star } from "lucide-react";
+
 import { useParams } from "react-router";
+
 import { Header } from "../common/header/header";
 import { useGetGamesById } from "../hooks/use-get-games-by-id";
 import { useGetGamesScreenshots } from "../hooks/use-get-games-screenshots";
-import { Star } from "lucide-react";
+import { GameSkeleton } from "../skeletons/game-skeleton";
 
 export function GamePage() {
   const { gameId } = useParams();
@@ -20,11 +23,7 @@ export function GamePage() {
   } = useGetGamesScreenshots(gameId);
 
   if (gameLoading || screenshotLoading) {
-    return (
-      <div className="min-h-screen bg-[#0F1419] text-white flex items-center justify-center">
-        <p className="animate-pulse text-lg">Loading game...</p>
-      </div>
-    );
+    return <GameSkeleton />;
   }
 
   if (gameError || screenshotError) {

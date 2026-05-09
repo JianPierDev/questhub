@@ -1,6 +1,8 @@
-import { GamesGrid } from "../components/games-grid/games-grid";
 import { useParams } from "react-router";
+
 import { Header } from "../common/header/header";
+import { GamesGrid } from "../components/games-grid/games-grid";
+import { CategorySkeleton } from "../skeletons/category-skeleton";
 import { useGetGamesDynamic } from "../hooks/use-get-games-dynamic";
 
 export function CategoryPage() {
@@ -10,7 +12,7 @@ export function CategoryPage() {
     genres: genreName,
   });
 
-  if (loading) return <p>Loading games...</p>;
+  if (loading) return <CategorySkeleton />;
   if (error) return <p>{error}</p>;
 
   return (
@@ -21,7 +23,7 @@ export function CategoryPage() {
           Juegos de {devName}
         </h1>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-6">
           {games.map((game) => (
             <GamesGrid
               key={game.id}

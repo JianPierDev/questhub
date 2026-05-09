@@ -5,6 +5,7 @@ import { ChevronRight } from "lucide-react";
 import { GamesGrid } from "../games-grid/games-grid";
 import { useVisibleGames } from "../../hooks/use-visible-games"
 import { useGetGamesDynamic } from "../../hooks/use-get-games-dynamic";
+import { GameSectionSkeleton } from "../../skeletons/game-section-skeleton";
 
 export function GameSection({ title, developer, genres }) {
   const { games, loading, error } = useGetGamesDynamic({
@@ -14,15 +15,7 @@ export function GameSection({ title, developer, genres }) {
   const visibleGames = useVisibleGames(games);
   const navigate = useNavigate();
 
-  if (loading) {
-    return (
-      <div className="w-[90%] max-w-7xl mx-auto py-12">
-        <p className="text-gray-400 text-center animate-pulse text-lg">
-          Loading games...
-        </p>
-      </div>
-    );
-  }
+  if (loading) return <GameSectionSkeleton />
 
   if (error) {
     return (
