@@ -27,6 +27,7 @@ export function CategoryPage() {
           {games.map((game) => (
             <GamesGrid
               key={game.id}
+              id= {game.id}
               image={game.background_image}
               name={game.name}
               rating={game.rating}
