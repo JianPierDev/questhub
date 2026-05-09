@@ -1,7 +1,7 @@
 import { GamesGrid } from "../components/games-grid/games-grid";
 import { useParams } from "react-router";
 import { Header } from "../common/header/header";
-import { useGetGamesDynamic } from "../features/hooks/use-get-games-dynamic";
+import { useGetGamesDynamic } from "../hooks/use-get-games-dynamic";
 
 export function CategoryPage() {
   const { devName, genreName } = useParams();

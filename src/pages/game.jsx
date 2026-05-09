@@ -1,7 +1,7 @@
 import { useParams } from "react-router";
 import { Header } from "../common/header/header";
-import { useGetGamesById } from "../features/hooks/use-get-games-by-id";
-import { useGetGamesScreenshots } from "../features/hooks/use-get-games-screenshots";
+import { useGetGamesById } from "../hooks/use-get-games-by-id";
+import { useGetGamesScreenshots } from "../hooks/use-get-games-screenshots";
 import { Star } from "lucide-react";
 
 export function GamePage() {

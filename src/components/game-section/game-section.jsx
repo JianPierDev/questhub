@@ -3,8 +3,8 @@ import { useNavigate } from "react-router";
 import { ChevronRight } from "lucide-react";
 
 import { GamesGrid } from "../games-grid/games-grid";
-import { useVisibleGames } from "../../features/hooks/use-visible-games";
-import { useGetGamesDynamic } from "../../features/hooks/use-get-games-dynamic";
+import { useVisibleGames } from "../../hooks/use-visible-games"
+import { useGetGamesDynamic } from "../../hooks/use-get-games-dynamic";
 
 export function GameSection({ title, developer, genres }) {
   const { games, loading, error } = useGetGamesDynamic({
