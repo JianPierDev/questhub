@@ -56,19 +56,15 @@ export function GameSection({ title, developer, genres }) {
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-7">
         {visibleGames.map((game) => (
-          <div
-            className="cursor-pointer"
+          <GamesGrid
             key={game.id}
-            onClick={() => navigate(`/game/${game.id}`)}
-          >
-            <GamesGrid
-              image={game.background_image}
-              name={game.name}
-              rating={game.rating}
-              released={game.released}
-              platforms={game.platforms?.map((p) => p.platform) || []}
-            />
-          </div>
+            id={game.id}
+            image={game.background_image}
+            name={game.name}
+            rating={game.rating}
+            released={game.released}
+            platforms={game.platforms?.map((p) => p.platform) || []}
+          />
         ))}
       </div>
     </section>

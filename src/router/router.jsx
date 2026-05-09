@@ -1,7 +1,11 @@
 import { createBrowserRouter } from "react-router";
+
 import { Home } from "../app/home/home";
-import { Category } from "../app/developer/category";
 import { Game } from "../app/game/game";
+import { Login } from "../app/login/login";
+import { Category } from "../app/developer/category";
+import { ProtectedRoute } from "../features/auth/components/protected-route";
+import { WishList } from "../app/wish-list/wish-list";
 
 export const router = createBrowserRouter([
   {
@@ -19,5 +23,18 @@ export const router = createBrowserRouter([
   {
     path: "/game/:gameId",
     Component: Game,
+  },
+  {
+    path: "/login",
+    Component: Login,
+  },
+  {
+    Component: ProtectedRoute,
+    children: [
+      {
+        path: "/wishlist",
+        Component: WishList,
+      }
+    ]
   }
 ]);

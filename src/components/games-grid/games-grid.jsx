@@ -1,18 +1,26 @@
-import { Star } from "lucide-react";
+import { Heart, Star } from "lucide-react";
+import { useNavigate } from "react-router";
+import { useAuth } from "../../features/auth/hooks/use-auth";
 
-export function GamesGrid({ image, name, rating, platforms = [], released }) {
+export function GamesGrid({
+  id,
+  image,
+  name,
+  rating,
+  platforms = [],
+  released,
+}) {
+  const navigate = useNavigate();
+  const { isAuthenticated } = useAuth();
+
   return (
-    <article className="group bg-[#1A222B] rounded-3xl overflow-hidden border border-white/5 hover:border-green-500/30 transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-black/40">
+    <article
+      className="group bg-[#1A222B] rounded-3xl overflow-hidden border border-white/5 hover:border-green-500/30 transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-black/40"
+      onClick={() => navigate(`/game/${id}`)}
+    >
       <div className="relative overflow-hidden h-56">
         <img
-          className="
-            w-full
-            h-full
-            object-cover
-            group-hover:scale-110
-            transition-transform
-            duration-500
-          "
+          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
           src={image}
           alt={name}
         />
@@ -24,6 +32,29 @@ export function GamesGrid({ image, name, rating, platforms = [], released }) {
 
           <span className="text-sm font-semibold">{rating}</span>
         </div>
+        <button
+          className="group/heart absolute bg-white bottom-4 right-4 backdrop-blur-md p-2 rounded border border-white/10 shadow-lg hover:shadow-red-500/20"
+          onClick={(e) => {
+            e.stopPropagation();
+
+            if (!isAuthenticated) {
+              navigate("/login", {
+                state: {
+                  from: "/wishlist",
+                },
+              });
+
+              return;
+            }
+
+            navigate("/wishlist");
+          }}
+        >
+          <Heart
+            className="text-black group-hover/heart:text-red-500 transition-colors"
+            size={14}
+          />
+        </button>
       </div>
 
       <div className="p-5 space-y-4">

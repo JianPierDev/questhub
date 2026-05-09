@@ -1,5 +1,4 @@
 import { Header } from "../common/header/header";
-import { GamesGrid } from "../components/games-grid/games-grid";
 import { Carousel } from "../components/carousel/Carousel";
 import { GameSection } from "../components/game-section/game-section";
 

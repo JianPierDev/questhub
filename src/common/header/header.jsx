@@ -10,12 +10,18 @@ export function Header() {
           <div className="flex items-center gap-2">
             <Menu className="cursor-pointer hover:text-slate-300" />
             <Link to={"/"}>
-              <img className="w-full object-contain" src={Logotipe} alt="logotipe" />
+              <img
+                className="w-full object-contain"
+                src={Logotipe}
+                alt="logotipe"
+              />
             </Link>
           </div>
 
           <div className="flex justify-end items-center gap-4 md:col-start-3">
-            <User className="cursor-pointer hover:text-slate-300" />
+            <Link to="/login">
+              <User className="cursor-pointer hover:text-slate-300" />
+            </Link>
             <ShoppingCart className="cursor-pointer hover:text-slate-300" />
           </div>
 
