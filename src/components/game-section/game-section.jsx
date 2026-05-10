@@ -56,7 +56,7 @@ export function GameSection({ title, developer, genres }) {
             name={game.name}
             rating={game.rating}
             released={game.released}
-            platforms={game.platforms?.map((p) => p.platform) || []}
+            platforms={game.platforms?.map((platform) => platform.platform) || []}
           />
         ))}
       </div>
