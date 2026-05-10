@@ -25,6 +25,10 @@ export const router = createBrowserRouter([
         Component: Category,
       },
       {
+        path: "/search",
+        Component: Category,
+      },
+      {
         path: "/game/:gameId",
         Component: Game,
       },

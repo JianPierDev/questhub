@@ -41,12 +41,12 @@ export function WishListPage() {
               </div>
 
               <div className="text-center sm:text-left">
-                <h1 className="text-3xl font-black">Alex Mercer</h1>
+                <h1 className="text-3xl font-black">Don Romer</h1>
 
                 <div className="space-y-2 mt-3">
                   <div className="flex items-center justify-center sm:justify-start gap-2 text-gray-400">
                     <Mail size={16} />
-                    <span>alexmercer@email.com</span>
+                    <span>don@gmail.com</span>
                   </div>
 
                   <div className="flex items-center justify-center sm:justify-start gap-2 text-gray-400">
