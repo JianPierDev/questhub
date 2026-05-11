@@ -1,3 +1,4 @@
+import { Footer } from "../common/footer/footer";
 import { Header } from "../common/header/header";
 import { Carousel } from "../components/carousel/Carousel";
 import { GameSection } from "../components/game-section/game-section";
@@ -9,19 +10,21 @@ export function HomePage() {
       <Carousel />
 
       <GameSection
-        title={"¡Capcom llegó con precios bajos y mucho hype!"}
+        title={"Capcom has arrived with low prices and a lot of hype!"}
         developer={"capcom"}
       />
       <GameSection
-        title={"¡Ubisoft no se queda atras, aprovecha estos descuentos!"}
+        title={"Ubisoft isn't falling behind—take advantage of these discounts!"}
         developer={"ubisoft"}
       />
-      <GameSection title={"¡Acción sin límites!"} genres={"action"} />
-      <GameSection title={"¡Juegos épicos de aventura!"} genres={"adventure"} />
+      <GameSection title={"Nonstop action!"} genres={"action"} />
+      <GameSection title={"Epic adventure games!"} genres={"adventure"} />
       <GameSection
-        title={"¡Infaltable los juegos de estrategia!"}
+        title={"Strategy games are a must!"}
         genres={"strategy"}
       />
+
+      <Footer />
     </>
   );
 }

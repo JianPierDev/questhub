@@ -1,29 +1,23 @@
 import { Header } from "../common/header/header";
 import { Heart, Mail, Globe, Gamepad2, Star, Trophy } from "lucide-react";
+import Avatar from "../assets/cat.jpg"
 
 export function WishListPage() {
   const wishlist = [
     {
-      id: 1,
-      name: "Cyberpunk 2077",
-      image: "https://images.unsplash.com/photo-1542751371-adc38448a05e",
-      genre: "RPG",
-      rating: 4.8,
-    },
-    {
-      id: 2,
+      id: 326243,
       name: "Elden Ring",
-      image: "https://images.unsplash.com/photo-1511512578047-dfb367046420",
+      image: "https://media.rawg.io/media/games/b29/b294fdd866dcdb643e7bab370a552855.jpg",
       genre: "Souls-like",
       rating: 4.9,
     },
     {
-      id: 3,
-      name: "God of War",
-      image: "https://images.unsplash.com/photo-1493711662062-fa541adb3fc8",
+      id: 2,
+      name: "God of War: Ascension",
+      image: "https://media.rawg.io/media/games/c13/c13815d4923dc9778ff959985ad4dd43.jpg",
       genre: "Action",
-      rating: 4.7,
-    },
+      rating: 3.84,
+    },  
   ];
   return (
     <>
@@ -34,7 +28,7 @@ export function WishListPage() {
             <div className="flex flex-col sm:flex-row items-center gap-6">
               <div className="w-28 h-28 rounded-full overflow-hidden border-4 border-green-500/40 shadow-lg shadow-green-500/20">
                 <img
-                  src="https://i.pravatar.cc/300"
+                  src={Avatar}
                   alt="User Avatar"
                   className="w-full h-full object-cover"
                 />
